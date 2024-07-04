@@ -1,3 +1,5 @@
+import { logout } from "./logout.js";
+
 function loadMainMenu(){
     var gameBox = document.getElementById("gameBox");
     //gameBox.innerHTML = `${users[player].name}`;
@@ -57,6 +59,13 @@ function loadMainMenu(){
     buttonUpgrade.addEventListener("click",loadUpgradeMenu);
     buttonUpgrade.innerText="Upgrade";
     gameBox.appendChild(buttonUpgrade);
+
+    var buttonLogout = document.createElement("button");
+    buttonLogout.setAttribute("class",`buttonLogout`);
+    buttonLogout.setAttribute("id",`buttonLogout`);
+    buttonLogout.addEventListener("click",logout);
+    buttonLogout.innerText="⬱ Leave";
+    gameBox.appendChild(buttonLogout);
 }
 
 function loadRouletteMenu(){}
