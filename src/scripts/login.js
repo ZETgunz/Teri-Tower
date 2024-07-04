@@ -1,6 +1,6 @@
 import { users } from "../users/login.js";
 import { getUser } from "./util.js";
-import { loadGame } from "./mainMenu.js";
+import { loadGame } from "./load.js";
 
 function loginForm() {
     var gameBox = document.getElementById("gameBox");
@@ -72,9 +72,15 @@ function validate(click) {
             click.preventDefault();
             loadGame(user);
         }
-        else { click.preventDefault(); }
+        else { 
+            click.preventDefault(); 
+            alert("Incorrect passuwordo!");
+        }
     }
-    else { click.preventDefault() };
+    else { 
+        click.preventDefault() 
+        alert("No such Teririan found!");
+    };
 }
 
 export { loginForm }

@@ -12,13 +12,10 @@
             font-family: Minecraft;
             src: url('./src/font/Minecraft.ttf');
         }
-
         html {
             background-color: cornflowerblue;
             font-family: Minecraft;
-
         }
-
         div.gameBox {
             /* border: 2px solid black; */
             /* outline: #000000 solid 5px; */
@@ -33,7 +30,6 @@
             left: 50%;
             transform: translate(-50%, -50%);
         }
-
         /*img.testimg {
             position: absolute;
             left: 50%;
@@ -43,6 +39,7 @@
             image-rendering: pixelated;
         }*/
 
+        /*login menu*/
         div.loginBox {
             position: absolute;
             width: 800px;
@@ -51,19 +48,21 @@
             left: calc(50% - 400px);
             outline: yellowgreen solid 5px;
         }
-
+        p.loginPrompt {
+            font-size: 60px;
+        }
         label.formNameLabel{
             position: absolute;
             font-size: 40px;
-            top: 225px;
+            top: 200px;
             left: 100px;
         }
         input.formNameInput{
             position: absolute;
-            top: 300px;
+            top: 260px;
             left: 100px;
             width: 600px;
-            height: 35px;
+            height: 40px;
             border-radius: 7px;
             font-family: inherit;
             font-size: 25px;
@@ -71,22 +70,22 @@
         label.formPassLabel{
             position: absolute;
             font-size: 40px;
-            top: 400px;
+            top: 375px;
             left: 100px;
         }
         input.formPassInput{
             position: absolute;
-            top: 475px;
+            top: 435px;
             left: 100px;
             width: 600px;
-            height: 35px;
+            height: 40px;
             border-radius: 7px;
             font-family: inherit;
             font-size: 35px;
         }
         input.formSubmit{
             position: absolute;
-            top: 535px;
+            top: 510px;
             left: 300px;
             width: 200px;
             height: 45px;
@@ -96,9 +95,64 @@
             padding-top: 7px;
         }
 
-        p.loginPrompt {
-            font-size: 60px;
+        /*main menu*/
+        button.buttonRoulette{
+            position: absolute;
+            top: 150px;
+            left: 1500px;
+            width: 200px;
+            height: 200px;
         }
+        button.buttonAttack{
+            position: absolute;
+            top: 150px;
+            left: 1750px;
+            width: 200px;
+            height: 200px;
+        }
+        button.buttonChars{
+            position: absolute;
+            top: 400px;
+            left: 1625px;
+            width: 200px;
+            height: 100px;
+        }
+        button.buttonElfs{
+            position: absolute;
+            top: 500px;
+            left: 1625px;
+            width: 200px;
+            height: 100px;
+        }
+        button.buttonEquips{
+            position: absolute;
+            top: 400px;
+            left: 1875px;
+            width: 200px;
+            height: 100px;
+        }
+        button.buttonEidolons{
+            position: absolute;
+            top: 500px;
+            left: 1875px;
+            width: 200px;
+            height: 100px;
+        }
+        button.buttonForge{
+            position: absolute;
+            top: 650px;
+            left: 1750px;
+            width: 200px;
+            height: 100px;
+        }
+        button.buttonUpgrade{
+            position: absolute;
+            top: 750px;
+            left: 1750px;
+            width: 200px;
+            height: 100px;
+        }
+
     </style>
 </head>
 
