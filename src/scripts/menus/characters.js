@@ -26,7 +26,7 @@ function loadCharsMenu() {
     var scriptChar = document.createElement("script");
     var script = document.createElement("script");
     script.setAttribute("id",`scriptChar`);
-    script.src="/src/scripts/menus/charDropdown.js";
+    script.src="../src/scripts/menus/charDropdown.js";
     document.body.appendChild(script);
     selectChar.appendChild(optionChar);
     selectChar.appendChild(scriptChar);
