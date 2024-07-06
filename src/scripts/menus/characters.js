@@ -1,4 +1,5 @@
 import { loadMainMenu } from "./main.js";
+import { charList } from "../../res/data/charList.js";
 
 function loadCharsMenu() {
     var gameBox = document.getElementById("gameBox");
@@ -28,27 +29,27 @@ function loadCharsMenu() {
     charBox.appendChild(tmp);*/
 
     var buttonCharToMain = document.createElement("button");
-    buttonCharToMain.setAttribute("class",`buttonCharToMain`);
-    buttonCharToMain.setAttribute("id",`buttonCharToMain`);
+    buttonCharToMain.setAttribute("class", `buttonCharToMain`);
+    buttonCharToMain.setAttribute("id", `buttonCharToMain`);
     buttonCharToMain.addEventListener("click", back);
-    buttonCharToMain.innerText="Back";
+    buttonCharToMain.innerText = "Back";
     charBox.appendChild(buttonCharToMain);
 }
 
-function dropdown(){
+function dropdown() {
     var dropdownChar = document.createElement("div");
-    dropdownChar.setAttribute("class",`dropdownChar`);
-    dropdownChar.setAttribute("id",`dropdownChar`);
+    dropdownChar.setAttribute("class", `dropdownChar`);
+    dropdownChar.setAttribute("id", `dropdownChar`);
     var selectChar = document.createElement("select");
-    selectChar.setAttribute("class",`selectChar`);
-    selectChar.setAttribute("id",`selectChar`);
+    selectChar.setAttribute("class", `selectChar`);
+    selectChar.setAttribute("id", `selectChar`);
     var optionChar = document.createElement("option");
-    optionChar.setAttribute("value",`default`);
-    optionChar.innerText="Category";
+    optionChar.setAttribute("value", `default`);
+    optionChar.innerText = "Category";
     var scriptChar = document.createElement("script");
     var script = document.createElement("script");
-    script.setAttribute("id",`scriptChar`);
-    script.src="./src/scripts/menus/charDropdown.js";
+    script.setAttribute("id", `scriptChar`);
+    script.src = "./src/scripts/menus/charDropdown.js";
     document.body.appendChild(script);
     selectChar.appendChild(optionChar);
     selectChar.appendChild(scriptChar);
@@ -64,31 +65,31 @@ function dropdown(){
     }
 }
 
-function scroll(){
+function scroll() {
     var scrollChar = document.createElement("div");
-    scrollChar.setAttribute("class",`scrollChar`);
-    scrollChar.setAttribute("id",`scrollChar`);
+    scrollChar.setAttribute("class", `scrollChar`);
+    scrollChar.setAttribute("id", `scrollChar`);
     charBox.appendChild(scrollChar);
-    var chars = ["Kiana","Mei", "Bronya", "Seele", "Hua"];
-    for(var i in chars){
-        var optionChar = document.createElement("button");
-        optionChar.setAttribute("class",`optionChar`);
-        optionChar.setAttribute("id",`optionChar`);
-        optionChar.setAttribute("char",`${chars[i]}`);
-        optionChar.style.background =`url('./src/res/char/${chars[i]}.png') no-repeat center center fixed`;
-        optionChar.style.backgroundSize = "cover";
-        if(i!=chars.length-1)optionChar.style.marginRight = "10px";
-        scrollChar.appendChild(optionChar);
+    for (var i in charList) {
+        for (var j in charList[i].chars) {
+            var optionChar = document.createElement("button");
+            optionChar.setAttribute("class", `optionChar`);
+            optionChar.setAttribute("id", `optionChar`);
+            optionChar.setAttribute("char", `${charList[i].chars[j].title}`);
+            optionChar.style.background = `url('./src/res/char/${charList[i].chars[j].title}.png') no-repeat center center fixed`;
+            optionChar.style.backgroundSize = "cover";
+            //if(i!=charList[i].length-1)
+            optionChar.style.marginRight = "10px";
+            scrollChar.appendChild(optionChar);
+        }
     }
-
-
 }
 
-function back(){
+function back() {
     var scriptChar = document.getElementById("scriptChar");
     document.body.removeChild(scriptChar);
     var gameBox = document.getElementById("gameBox");
-    gameBox.innerHTML="";
+    gameBox.innerHTML = "";
     loadMainMenu();
 }
 
