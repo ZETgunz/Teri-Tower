@@ -77,7 +77,7 @@ function scroll(){
         optionChar.setAttribute("char",`${chars[i]}`);
         optionChar.style.background =`url('./src/res/char/${chars[i]}.png') no-repeat center center fixed`;
         optionChar.style.backgroundSize = "cover";
-        if(i!=chars.length-1)optionChar.style.marginRight = "10px";
+        if(i!=chars.length-1)optionChar.style.marginRight = "15px";
         scrollChar.appendChild(optionChar);
     }
 
