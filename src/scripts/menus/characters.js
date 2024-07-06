@@ -14,6 +14,28 @@ function loadCharsMenu() {
     searchBar.setAttribute("placeholder", `Search...`);
     charBox.appendChild(searchBar);
 
+    dropdown();
+
+    scroll();
+
+    /*var tmp = document.createElement("div");
+    tmp.style.height = "30px";
+    tmp.style.width = "1200px";
+    tmp.style.position = "absolute";
+    tmp.style.top = "740px";
+    tmp.style.left = "10px";
+    tmp.style.outline = "yellowgreen solid 5px";
+    charBox.appendChild(tmp);*/
+
+    var buttonCharToMain = document.createElement("button");
+    buttonCharToMain.setAttribute("class",`buttonCharToMain`);
+    buttonCharToMain.setAttribute("id",`buttonCharToMain`);
+    buttonCharToMain.addEventListener("click", back);
+    buttonCharToMain.innerText="Back";
+    charBox.appendChild(buttonCharToMain);
+}
+
+function dropdown(){
     var dropdownChar = document.createElement("div");
     dropdownChar.setAttribute("class",`dropdownChar`);
     dropdownChar.setAttribute("id",`dropdownChar`);
@@ -40,22 +62,26 @@ function loadCharsMenu() {
         option.setAttribute('value', categories[i]);
         selectChar.insertBefore(option, selectChar.lastChild);
     }
+}
 
-    /*var tmp = document.createElement("div");
-    tmp.style.height = "30px";
-    tmp.style.width = "1200px";
-    tmp.style.position = "absolute";
-    tmp.style.top = "740px";
-    tmp.style.left = "10px";
-    tmp.style.outline = "yellowgreen solid 5px";
-    charBox.appendChild(tmp);*/
+function scroll(){
+    var scrollChar = document.createElement("div");
+    scrollChar.setAttribute("class",`scrollChar`);
+    scrollChar.setAttribute("id",`scrollChar`);
+    charBox.appendChild(scrollChar);
+    var chars = ["Kiana","Mei", "Bronya", "Seele", "Hua"];
+    for(var i in chars){
+        var optionChar = document.createElement("button");
+        optionChar.setAttribute("class",`optionChar`);
+        optionChar.setAttribute("id",`optionChar`);
+        optionChar.setAttribute("char",`${chars[i]}`);
+        optionChar.style.background =`url('./src/res/char/${chars[i]}.png') no-repeat center center fixed`;
+        optionChar.style.backgroundSize = "cover";
+        if(i!=chars.length-1)optionChar.style.marginRight = "10px";
+        scrollChar.appendChild(optionChar);
+    }
 
-    var buttonCharToMain = document.createElement("button");
-    buttonCharToMain.setAttribute("class",`buttonCharToMain`);
-    buttonCharToMain.setAttribute("id",`buttonCharToMain`);
-    buttonCharToMain.addEventListener("click", back);
-    buttonCharToMain.innerText="Back";
-    charBox.appendChild(buttonCharToMain);
+
 }
 
 function back(){
