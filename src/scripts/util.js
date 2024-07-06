@@ -1,4 +1,5 @@
 import {users} from '../users/login.js';
+import { charList } from '../res/data/charList.js';
 
 function getUser(name){
     for(var i in users){
@@ -8,4 +9,14 @@ function getUser(name){
     }
 }
 
+function getCategory(category){
+    for(var i in charList){
+        if(charList[i].category == category){
+            return i;
+        }
+    }
+}
+
+
 export {getUser};
+export {getCategory};

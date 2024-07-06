@@ -1,3 +1,5 @@
+import { scrollFill } from "./characters.js";
+
 var selectedIndex;
     var path;
     var typeName;
@@ -23,6 +25,10 @@ var selectedIndex;
             c.setAttribute("class",`optionChar`);
             c.innerHTML = selElmnt.options[j].innerHTML;
             c.addEventListener("click", function (e) {
+
+                console.log(e.target.innerHTML);
+                scrollFill(e.target.innerHTML);
+
                 /*when an item is clicked, update the original select box,
                 and the selected item:*/
                 var y, i, k, s, h, sl, yl;

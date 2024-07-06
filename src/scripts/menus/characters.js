@@ -1,5 +1,6 @@
 import { loadMainMenu } from "./main.js";
 import { charList } from "../../res/data/charList.js";
+import { getCategory } from "../util.js";
 
 function loadCharsMenu() {
     var gameBox = document.getElementById("gameBox");
@@ -49,18 +50,18 @@ function dropdown() {
     var scriptChar = document.createElement("script");
     var script = document.createElement("script");
     script.setAttribute("id", `scriptChar`);
+    script.setAttribute("type",`module`);
     script.src = "./src/scripts/menus/charDropdown.js";
     document.body.appendChild(script);
     selectChar.appendChild(optionChar);
     selectChar.appendChild(scriptChar);
     dropdownChar.appendChild(selectChar);
     charBox.appendChild(dropdownChar);
-    var categories = ["All", "ER", "Herrschers", "Kiana", "Mei"]
-    for (var i in categories) {
+    for (var i in charList) {
         var option = document.createElement("option"),
-            txt = document.createTextNode(categories[i]);
+            txt = document.createTextNode(charList[i].category);
         option.appendChild(txt);
-        option.setAttribute('value', categories[i]);
+        option.setAttribute('value', charList[i].category);
         selectChar.insertBefore(option, selectChar.lastChild);
     }
 }
@@ -70,16 +71,38 @@ function scroll() {
     scrollChar.setAttribute("class", `scrollChar`);
     scrollChar.setAttribute("id", `scrollChar`);
     charBox.appendChild(scrollChar);
-    for (var i in charList) {
-        for (var j in charList[i].chars) {
+    scrollFill("All");
+}
+
+function scrollFill(category) {
+    var scrollChar = document.getElementById("scrollChar");
+    scrollChar.innerHTML = "";
+    if (category == "All") {
+        for (var i in charList) {
+            for (var j in charList[i].chars) {
+                var optionChar = document.createElement("button");
+                optionChar.setAttribute("class", `optionChar`);
+                optionChar.setAttribute("id", `optionChar`);
+                optionChar.setAttribute("char", `${charList[i].chars[j].title}`);
+                optionChar.style.background = `url('./src/res/char/${charList[i].chars[j].title}.png') no-repeat center center fixed`;
+                optionChar.style.backgroundSize = "cover";
+                //if(i!=charList[i].length-1)
+                optionChar.style.marginRight = "10px";
+                scrollChar.appendChild(optionChar);
+            }
+        }
+    }
+    else {
+        var selecedCategory = getCategory(category);
+        console.log(selecedCategory);
+        for (var i in charList[selecedCategory].chars) {
             var optionChar = document.createElement("button");
             optionChar.setAttribute("class", `optionChar`);
             optionChar.setAttribute("id", `optionChar`);
-            optionChar.setAttribute("char", `${charList[i].chars[j].title}`);
-            optionChar.style.background = `url('./src/res/char/${charList[i].chars[j].title}.png') no-repeat center center fixed`;
+            optionChar.setAttribute("char", `${charList[selecedCategory].chars[i].title}`);
+            optionChar.style.background = `url('./src/res/char/${charList[selecedCategory].chars[i].title}.png') no-repeat center center fixed`;
             optionChar.style.backgroundSize = "cover";
-            //if(i!=charList[i].length-1)
-            optionChar.style.marginRight = "10px";
+            if(i!=charList[selecedCategory].chars.length-1) optionChar.style.marginRight = "10px";
             scrollChar.appendChild(optionChar);
         }
     }
@@ -93,4 +116,5 @@ function back() {
     loadMainMenu();
 }
 
-export { loadCharsMenu }
+export { loadCharsMenu };
+export { scrollFill };
