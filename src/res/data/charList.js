@@ -1,5 +1,9 @@
 var charList = [
     {
+        'category': 'All',
+        'chars': null,
+    },
+    {
         'category': 'APHO',
         'chars': [
             {
