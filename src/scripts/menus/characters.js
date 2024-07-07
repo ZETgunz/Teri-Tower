@@ -143,7 +143,7 @@ function scrollSearch(filter) {
     }
     else {
         for (var i in charList[selectedCategory].chars) {
-            if ((charList[i].chars[j].title.toUpperCase()).includes(filter)) {
+            if ((charList[selectedCategory].chars[i].title.toUpperCase()).includes(filter)) {
                 var optionChar = document.createElement("button");
                 optionChar.setAttribute("class", `optionChar`);
                 optionChar.setAttribute("id", `optionChar`);
