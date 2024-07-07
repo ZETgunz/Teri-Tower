@@ -101,11 +101,11 @@ function scrollFill(category) {
                 optionChar.setAttribute("char", `${charList[i].chars[j].title}`);
                 optionChar.style.background = `url('./src/res/char/${charList[i].chars[j].title}.png') no-repeat center center fixed`;
                 optionChar.style.backgroundSize = "cover";
-                //if(i!=charList[i].length-1)
                 optionChar.style.marginRight = "10px";
                 scrollChar.appendChild(optionChar);
             }
         }
+        scrollChar.lastChild.style.marginRight = "0px";
     }
     else {
         for (var i in charList[selectedCategory].chars) {
@@ -134,12 +134,12 @@ function scrollSearch(filter) {
                     optionChar.setAttribute("char", `${charList[i].chars[j].title}`);
                     optionChar.style.background = `url('./src/res/char/${charList[i].chars[j].title}.png') no-repeat center center fixed`;
                     optionChar.style.backgroundSize = "cover";
-                    //if(i!=charList[i].length-1)
                     optionChar.style.marginRight = "10px";
                     scrollChar.appendChild(optionChar);
                 }
             }
         }
+        scrollChar.lastChild.style.marginRight = "0px";
     }
     else {
         for (var i in charList[selectedCategory].chars) {
