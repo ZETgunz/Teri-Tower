@@ -1,4 +1,5 @@
 import { loadCharsMenu } from "./characters.js";
+import { loadElfMenu } from "./elf.js";
 
 import { logout } from "../logout.js";
 
@@ -32,7 +33,7 @@ function loadMainMenu(){
     var buttonElfs = document.createElement("button");
     buttonElfs.setAttribute("class",`buttonElfs`);
     buttonElfs.setAttribute("id",`buttonElfs`);
-    buttonElfs.addEventListener("click",loadElfsMenu);
+    buttonElfs.addEventListener("click",loadElfMenu);
     buttonElfs.innerText="ELF";
     gameBox.appendChild(buttonElfs);
 
@@ -75,7 +76,7 @@ function loadMainMenu(){
 function loadRouletteMenu(){}
 function loadAttackMenu(){}
 //function loadCharsMenu(){}
-function loadElfsMenu(){}
+//function loadElfsMenu(){}
 function loadEquipsMenu(){}
 function loadEidolonsMenu(){}
 function loadForgeMenu(){}
