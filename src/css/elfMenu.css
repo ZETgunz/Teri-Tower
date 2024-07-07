@@ -1,0 +1,33 @@
+/*char menu*/
+div.elfBox {
+    position: absolute;
+    top: 150px;
+    left: 150px;
+    width: 1620px;
+    height: 780px;
+    outline: yellowgreen solid 5px;
+    font-family: Minecraft;
+}
+
+input.searchBar {
+    position: absolute;
+    top: 10px;
+    left: 1298px;
+    width: 312px;
+    height: 75px;
+    border: none;
+    padding: 0px;
+    font-size: 30px;
+    font-family: inherit;
+    text-align: center;
+}
+
+button.buttonElfToMain{
+    position: absolute;
+    top: 695px;
+    left: 1298px;
+    width: 312px;
+    height: 75px;
+    font-size: 30px;
+    font-family: inherit;
+}
