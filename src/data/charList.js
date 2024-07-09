@@ -544,8 +544,8 @@ var charList = [
             },
             {
                 'name': "Ooh! Summer!",
-                'title': "Summer",
-                'titlecaps': "SUMMER",
+                'title': "OohSummer",
+                'titlecaps': "OOHSUMMER",
                 'owner': 'Ezeriel',
                 'rank': 1,
                 'price': '140',
