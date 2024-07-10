@@ -37,6 +37,7 @@ var userItems = [
             {'type': 'weapon','id': 5},
             {'type': 'weapon','id': 6},
             {'type': 'weapon','id': 7},
+            {'type': 'weapon','id': 7},
             {'type': 'upgrade','id': 1, 'count' :3},
             {'type': 'upgrade','id': 2, 'count' :2},
             {'type': 'upgrade','id': 3, 'count' :5},
