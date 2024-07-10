@@ -1,4 +1,4 @@
-button.dropdownButtonEquip {
+button.dropdownButtonEquipSort {
     position: absolute;
     top: 95px;
     left: 1298px;
@@ -16,7 +16,7 @@ button.dropdownButtonEquip {
     padding: 0px;
 }
 
-div.dropdownListEquip {
+div.dropdownListEquipSort {
     position:absolute;
     top: 170px;
     left: 1298px;
@@ -26,7 +26,7 @@ div.dropdownListEquip {
     background-color: #ec7ae3;
 }
 
-button.optionCategoryEquip {
+button.dropdownOptionEquipSort {
     width: 287px;
     height: 75px;
     line-height: 75px;
@@ -39,17 +39,73 @@ button.optionCategoryEquip {
     outline: none !important;
 }
 
-div.dropdownListEquip::-webkit-scrollbar{
+div.dropdownListEquipSort::-webkit-scrollbar{
     width: 25px;
 }
 
-div.dropdownListEquip::-webkit-scrollbar-track{
+div.dropdownListEquipSort::-webkit-scrollbar-track{
     box-shadow: inset 0 0 5px grey;
     border-radius: 10px;
     background: grey;
 }
 
-div.dropdownListEquip::-webkit-scrollbar-thumb{
+div.dropdownListEquipSort::-webkit-scrollbar-thumb{
+    background: #ec7ae3;
+    border-radius: 10px;
+}
+
+button.dropdownButtonEquipCategory {
+    position: absolute;
+    top: 170px;
+    left: 1298px;
+    width: 312px;
+    height: 75px;
+    line-height: 75px;
+    color: white;
+    font-size: 30px;
+    font-family: inherit;
+    border: none;
+    border-radius: 2px;
+    background-color: #ec7ae3;
+    outline: none !important;
+    display: inline-block;
+    padding: 0px;
+}
+
+div.dropdownListEquipCategory {
+    position:absolute;
+    top: 245px;
+    left: 1298px;
+    width: 312px;
+    height: 440px;
+    overflow-y: scroll;
+    background-color: #ec7ae3;
+}
+
+button.dropdownOptionEquipCategory {
+    width: 287px;
+    height: 75px;
+    line-height: 75px;
+    color: white;
+    font-size: 30px;
+    font-family: inherit;
+    border: none;
+    border-radius: 2px;
+    background-color: #ec7ae3;
+    outline: none !important;
+}
+
+div.dropdownListEquipCategory::-webkit-scrollbar{
+    width: 25px;
+}
+
+div.dropdownListEquipCategory::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+    background: grey;
+}
+
+div.dropdownListEquipCategory::-webkit-scrollbar-thumb{
     background: #ec7ae3;
     border-radius: 10px;
 }
