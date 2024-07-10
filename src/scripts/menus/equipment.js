@@ -1,12 +1,13 @@
 import { loadMainMenu } from "./main.js";
 import { userItems } from "../../users/items.js";
 import { player } from "../player.js";
+import { getItemType } from "../util.js";
 import { getItemTitle } from "../util.js";
 
 var selectedCategory = 0;
 var selectedCategoryName = "";
 
-function loadEquipsMenu(){
+function loadEquipsMenu() {
     var gameBox = document.getElementById("gameBox");
     gameBox.innerHTML = "";
     var equipBox = document.createElement("div");
@@ -15,8 +16,8 @@ function loadEquipsMenu(){
     gameBox.appendChild(equipBox);
 
     var equipList = document.createElement("div");
-    equipList.setAttribute("class",`equipList`);
-    equipList.setAttribute("id",`equipList`);
+    equipList.setAttribute("class", `equipList`);
+    equipList.setAttribute("id", `equipList`);
     equipBox.appendChild(equipList);
 
     var searchBar = document.createElement("input");
@@ -95,18 +96,25 @@ function scroll() {
     scrollEquip.setAttribute("id", `scrollEquip`);
     equipBox.appendChild(scrollEquip);
     //scrollFill('All');
-    for(var i in userItems[player].items){
-        var item = getItemTitle(userItems[player].items[i].type,userItems[player].items[i].id);
-        console.log(i);
+    for (var i in userItems[player].items) {
+        var item = getItemTitle(userItems[player].items[i].type, userItems[player].items[i].id);
+        var itemType = getItemType(userItems[player].items[i]);
         var optionEquip = document.createElement("button");
-                optionEquip.setAttribute("class", `optionEquip`);
-                optionEquip.setAttribute("id", `optionEquip`);
-                optionEquip.setAttribute("item", `${item}`);
-                optionEquip.style.background = `url('./src/images/items/${item}.png') no-repeat center center fixed`;
-                optionEquip.style.backgroundSize = "cover";
-                optionEquip.style.top = `${(244*(Math.floor(i/5)))}px`;
-                optionEquip.style.left = `${(28*((i%5)+1)) + (216*(i%5)) - 7}px`;
-                scrollEquip.appendChild(optionEquip);
+        if (userItems[player].items[i].count) {
+            var text = document.createElement("p");
+            text.setAttribute("class", `textEquip`);
+            text.setAttribute("id", `textEquip`);
+            text.innerText = `${userItems[player].items[i].count}x`;
+            optionEquip.appendChild(text);
+        }
+        optionEquip.setAttribute("class", `optionEquip`);
+        optionEquip.setAttribute("id", `optionEquip`);
+        optionEquip.setAttribute("item", `${item}`);
+        optionEquip.style.background = `url('./src/images/items/${item}.png') no-repeat center center fixed`;
+        optionEquip.style.backgroundSize = "cover";
+        optionEquip.style.top = `${(244 * (Math.floor(i / 5)))}px`;
+        optionEquip.style.left = `${(28 * ((i % 5) + 1)) + (216 * (i % 5)) - 7}px`;
+        scrollEquip.appendChild(optionEquip);
     }
 }
 
@@ -144,4 +152,4 @@ function scroll() {
     }
 }*/
 
-export {loadEquipsMenu}
+export { loadEquipsMenu }
