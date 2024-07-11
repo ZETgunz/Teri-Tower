@@ -24,13 +24,13 @@ function loadEidolonsMenu() {
     searchBar.setAttribute("type", `text`);
     searchBar.setAttribute("placeholder", `Search...`);
     searchBar.addEventListener("keyup", function (e) {
-        var input = document.getElementById("searchBarEidolons").value;
+        var input = document.getElementById("searchBarEidolon").value;
         var filter = input.toUpperCase();
         if (input == "") {
-            //scrollFill();
+            scrollFill();
         }
         else {
-            //scrollSearch(filter);
+            scrollFill(filter);
         }
     });
     eidolonBox.appendChild(searchBar);
@@ -96,15 +96,23 @@ function scroll() {
     scrollFill();
 }
 
-function scrollFill() {
+function scrollFill(filter) {
     var scrollEidolon = document.getElementById("scrollEidolon");
     scrollEidolon.innerHTML = "";
     var indexes = [];
     var counter = 0;
     for (var i in userItems[player].items) {
         if (userItems[player].items[i].type == 'eidolon') {
-            indexes[counter] = i;
-            counter += 1;
+            if (filter) {
+                if (getEidolonTitle(userItems[player].items[i].id).includes(filter)) {
+                    indexes[counter] = i;
+                    counter += 1;
+                }
+            }
+            else {
+                indexes[counter] = i;
+                counter += 1;
+            }
         }
     }
     for (var i in indexes) {
