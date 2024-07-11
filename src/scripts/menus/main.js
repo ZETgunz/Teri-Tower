@@ -1,6 +1,7 @@
 import { loadCharsMenu } from "./characters.js";
 import { loadElfMenu } from "./elf.js";
 import { loadEquipsMenu } from "./equipment.js";
+import { loadEidolonsMenu } from "./eidolon.js";
 import { logout } from "../logout.js";
 
 function loadMainMenu(){
@@ -78,7 +79,7 @@ function loadAttackMenu(){}
 //function loadCharsMenu(){}
 //function loadElfsMenu(){}
 //function loadEquipsMenu(){}
-function loadEidolonsMenu(){}
+//function loadEidolonsMenu(){}
 function loadForgeMenu(){}
 function loadUpgradeMenu(){}
 
