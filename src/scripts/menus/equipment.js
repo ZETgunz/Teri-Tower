@@ -145,14 +145,22 @@ function scrollFill(type, mode) {
     var scrollEquip = document.getElementById("scrollEquip");
     scrollEquip.innerHTML = "";
     if (selectedCategory == 0) {
+        var indexes = [];
+        var counter = 0;
         for (var i in userItems[player].items) {
-            var item = getItemTitle(userItems[player].items[i].type, userItems[player].items[i].id);
+            if (userItems[player].items[i].type != 'eidolon') {
+                indexes[counter] = i;
+                counter += 1;
+            }
+        }
+        for (var i in indexes) {
+            var item = getItemTitle(userItems[player].items[indexes[i]].type, userItems[player].items[indexes[i]].id);
             var optionEquip = document.createElement("button");
-            if (userItems[player].items[i].count) {
+            if (userItems[player].items[indexes[i]].count) {
                 var text = document.createElement("p");
                 text.setAttribute("class", `textEquip`);
                 text.setAttribute("id", `textEquip`);
-                text.innerText = `${userItems[player].items[i].count}x`;
+                text.innerText = `${userItems[player].items[indexes[i]].count}x`;
                 optionEquip.appendChild(text);
             }
             optionEquip.setAttribute("class", `optionEquip`);
