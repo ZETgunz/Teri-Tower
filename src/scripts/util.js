@@ -1,6 +1,7 @@
 import {users} from '../users/login.js';
 import { charList } from '../data/charList.js';
 import { itemList } from '../data/items/itemList.js';
+import { eidolonList } from '../data/items/eidolonList.js';
 
 function getUser(name){
     for(var i in users){
@@ -35,7 +36,16 @@ function getItemTitle(type,id){
     }
 }
 
+function getEidolonTitle(id){
+    for(var i in eidolonList.items){
+        if(eidolonList.items[i].id == id){
+            return eidolonList.items[i].title;
+        }
+    }
+}
+
 export {getUser};
 export {getCategory};
 export {getItemType};
 export {getItemTitle};
+export {getEidolonTitle};
