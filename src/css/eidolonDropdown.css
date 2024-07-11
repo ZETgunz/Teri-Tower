@@ -1,0 +1,55 @@
+button.dropdownButtonEidolonSort {
+    position: absolute;
+    top: 95px;
+    left: 1298px;
+    width: 312px;
+    height: 75px;
+    line-height: 75px;
+    color: white;
+    font-size: 30px;
+    font-family: inherit;
+    border: none;
+    border-radius: 2px;
+    background-color: #ec7ae3;
+    outline: none !important;
+    display: inline-block;
+    padding: 0px;
+}
+
+div.dropdownListEidolonSort {
+    position:absolute;
+    top: 170px;
+    left: 1298px;
+    width: 312px;
+    height: 515px;
+    overflow-y: scroll;
+    background-color: #ec7ae3;
+}
+
+button.dropdownOptionEidolonSort {
+    width: 287px;
+    height: 75px;
+    line-height: 75px;
+    color: white;
+    font-size: 30px;
+    font-family: inherit;
+    border: none;
+    border-radius: 2px;
+    background-color: #ec7ae3;
+    outline: none !important;
+}
+
+div.dropdownListEidolonSort::-webkit-scrollbar{
+    width: 25px;
+}
+
+div.dropdownListEidolonSort::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+    background: grey;
+}
+
+div.dropdownListEidolonSort::-webkit-scrollbar-thumb{
+    background: #ec7ae3;
+    border-radius: 10px;
+}

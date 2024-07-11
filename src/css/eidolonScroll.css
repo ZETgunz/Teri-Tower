@@ -1,0 +1,36 @@
+div.scrollEidolon{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 1278px;
+    height: 760px;
+    overflow-y: scroll;
+}
+
+div.scrollEidolon button.optionChar{
+    display: inline-block;
+}
+
+button.optionEidolon{
+    position: absolute;
+    width: 216px;
+    height: 216px;
+    image-rendering: pixelated;
+    border: none;
+    padding: 0px;
+}
+
+div.scrollEidolon::-webkit-scrollbar{
+    width: 35px;
+}
+
+div.scrollEidolon::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+    background: grey;
+}
+
+div.scrollEidolon::-webkit-scrollbar-thumb{
+    background: #ec7ae3;
+    border-radius: 10px;
+}
